@@ -17,9 +17,5 @@ build_script:
   - cmd: cd build
   - cmd: cmake ..
   - cmd: msbuild hello.sln
-  - cmd: pwd
-  - cmd: ls
-  - cmd: cd src
-  - cmd: ls
-  - cmd: ctest
+  - cmd: ctest -C ${BUILD_TYPE}
 
