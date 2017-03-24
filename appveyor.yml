@@ -3,18 +3,13 @@ version: 1.0.{build}
 environment:
   matrix:
     - COMPILER: MSVC14
-      PLATFORM: x64
-
     - COMPILER: MSVC15
-      PLATFORM: x64
-
     - COMPILER: MinGW
-      PLATFORM: x64
 
 build_script:
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
   - cmd: msbuild hello.sln
-  - cmd: ctest
+  - cmd: ctest -C "Debug"
 
