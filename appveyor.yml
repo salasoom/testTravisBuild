@@ -16,6 +16,7 @@ build_script:
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
-  - cmd: make
+  - cmd: ls
+  - cmd: msbuild hello.sln
   - cmd: src/hello
 
