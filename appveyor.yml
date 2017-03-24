@@ -1,18 +1,17 @@
 version: 1.0.{build}
 
-image: Visual Studio 2015
-
 matrix:
-  allow_failures:
-    - platform: x86
-    - platform: x64
+    - BUILD_TYPE: Release
+      COMPILER: MSVC14
+
+    - BUILD_TYPE: Release
+      COMPILER: MSVC15
 
 install:
   - cmd: echo 'Start install script'
 
 build_script:
   - cmd: echo 'Start build script'
-#  - cmd: appveyor.sh
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
