@@ -12,5 +12,5 @@ install:
 
 build_script:
   - echo 'Start build script'
-  - travis.sh
+  - appveyor.sh
 
