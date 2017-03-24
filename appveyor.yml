@@ -10,3 +10,7 @@ matrix:
 install:
   - echo 'Start install script'
 
+build_script:
+  - echo 'Start build script'
+  - ./travis.sh
+
