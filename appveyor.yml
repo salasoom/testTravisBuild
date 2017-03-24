@@ -12,5 +12,10 @@ install:
 
 build_script:
   - cmd: echo 'Start build script'
-  - cmd: appveyor.sh
+#  - cmd: appveyor.sh
+  - cmd: mkdir build
+  - cmd: cd build
+  - cmd: cmake ..
+  - cmd: make
+  - cmd: src/hello
 
