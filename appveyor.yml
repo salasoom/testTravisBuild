@@ -2,11 +2,9 @@ version: 1.0.{build}
 
 environment:
   matrix:
-    - BUILD_TYPE: Release
-      COMPILER: MSVC14
-  
-    - BUILD_TYPE: Release
-      COMPILER: MSVC15
+    - COMPILER: MSVC14
+    - COMPILER: MSVC15
+    - COMPILER: MinGW
 
 install:
   - cmd: echo 'Start install script'
@@ -15,7 +13,7 @@ build_script:
   - cmd: echo 'Start build script'
   - cmd: mkdir build
   - cmd: cd build
-  - cmd: cmake .. --config %BUILD_TYPE%
+  - cmd: cmake ..
   - cmd: msbuild hello.sln
-  - cmd: ctest -C %BUILD_TYPE%
+  - cmd: ctest -C "Debug"
 
