@@ -1,28 +1,4 @@
-language:
-  - c
-
-env:
-  global:
-    - secure: "INTEL_SERIAL_NUMBER"
-
-matrix:
-  include:
-    - compiler: icc
-      dist: trusty
-      sudo: "required"
-      before_install:
-        - wget -q -O /dev/stdout 'https://raw.githubusercontent.com/nemequ/icc-travis/master/install-icc.sh' | /bin/sh
-        - ./install-icc.sh
-      script:
-        - source ~/.bashrc
-        - mkdir build
-        - cd build
-        - cmake ../src && make
-      after_script:
-        - '[[ ! -z "${INTEL_INSTALL_PATH}" ]] && uninstall_intel_software'
-
-script:
-  - mkdir build
-  - cd build
-  - cmake ../src && make
+language: c
+compiler: gcc
+script: ./travis.sh
 
