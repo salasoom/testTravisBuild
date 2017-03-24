@@ -6,5 +6,6 @@ cd build
 cmake ..
 make
 
-./src/hello
+ctest
+#./src/hello
 
