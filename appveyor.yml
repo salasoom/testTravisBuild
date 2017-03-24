@@ -17,5 +17,5 @@ build_script:
   - cmd: cd build
   - cmd: cmake ..
   - cmd: msbuild hello.sln
-  - cmd: ctest -C %BUILD_TYPE%
+  - cmd: ctest -C "Debug"
 
