@@ -3,14 +3,15 @@ version: 1.0.{build}
 environment:
   matrix:
     - COMPILER: MSVC14
-    - COMPILER: MSVC15
-    - COMPILER: MinGW
+      PLATFORM: x64
 
-install:
-  - cmd: echo 'Start install script'
+    - COMPILER: MSVC15
+      PLATFORM: x64
+
+    - COMPILER: MinGW
+      PLATFORM: x64
 
 build_script:
-  - cmd: echo 'Start build script'
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
