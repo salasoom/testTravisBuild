@@ -15,7 +15,7 @@ build_script:
   - cmd: echo 'Start build script'
   - cmd: mkdir build
   - cmd: cd build
-  - cmd: cmake ..
+  - cmd: cmake .. --config %BUILD_TYPE%
   - cmd: msbuild hello.sln
-  - cmd: ctest -C "Debug"
+  - cmd: ctest -C %BUILD_TYPE%
 
