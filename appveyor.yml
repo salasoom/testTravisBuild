@@ -1,0 +1,12 @@
+version: 1.0.{build}
+
+image: Visual Studio 2015
+
+matrix:
+  allow_failures:
+    - platform: x86
+    - platform: x64
+
+install:
+  - echo 'Start install script'
+
