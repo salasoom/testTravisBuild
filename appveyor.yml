@@ -1,11 +1,11 @@
 version: 1.0.{build}
 
 matrix:
-    - BUILD_TYPE: Release
-      COMPILER: MSVC14
+  - BUILD_TYPE: Release
+    COMPILER: MSVC14
 
-    - BUILD_TYPE: Release
-      COMPILER: MSVC15
+  - BUILD_TYPE: Release
+    COMPILER: MSVC15
 
 install:
   - cmd: echo 'Start install script'
