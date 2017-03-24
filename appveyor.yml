@@ -8,9 +8,9 @@ matrix:
     - platform: x64
 
 install:
-  - echo 'Start install script'
+  - cmd: echo 'Start install script'
 
 build_script:
-  - echo 'Start build script'
-  - appveyor.sh
+  - cmd: echo 'Start build script'
+  - cmd: appveyor.sh
 
