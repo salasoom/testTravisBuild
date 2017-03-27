@@ -10,6 +10,6 @@ build_script:
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
-  - cmd: msbuild hello.sln \p:Configuration=Release
+  - cmd: msbuild hello.sln \p:Configuration="Release"
   - cmd: ctest -C "Release"
 
