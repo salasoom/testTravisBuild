@@ -16,7 +16,7 @@ build_script:
 #  - cmd: C:\msys64\usr\bin\sh.exe --login /c/projects
   - cmd: mkdir build
   - cmd: cd build
-  - cmd: cmake ..
+  - cmd: cmake .. -G "MinGW Makefiles"
   - cmd: mingw32-make
   - cmd: ctest -C "Debug"
 
