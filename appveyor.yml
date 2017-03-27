@@ -11,5 +11,5 @@ build_script:
   - cmd: cd build
   - cmd: cmake ..
   - cmd: msbuild hello.sln
-  - cmd: ctest -C "Debug"
+  - cmd: ctest -C "Release"
 
