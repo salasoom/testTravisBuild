@@ -12,4 +12,5 @@ build_script:
   - cmd: cmake ..
   - cmd: msbuild hello.sln
   - cmd: ctest -C "Debug"
+  - cmd: cl
 
