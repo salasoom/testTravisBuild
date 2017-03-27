@@ -1,21 +1,21 @@
-version: 1.0.{build}
+version: 1.1.0-{build}
 
 environment:
   matrix:
-    - COMPILER: MSVC14
-#    - COMPILER: MSVC15
-#    - COMPILER: MinGW
+    - GENERATOR: MinGW Makefiles
+    - GENERATOR: Visual Studio 14 2015
+    - GENERATOR: Visual Studio 14 2015 Win64
 
-install:
-  - cmd: choco install -y mingw
+#configuration: Debug
 
 build_script:
-  - cmd: refreshenv
-  - cmd: SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
-#  - cmd: C:\msys64\usr\bin\sh.exe --login /c/projects
-  - cmd: mkdir build
-  - cmd: cd build
-  - cmd: cmake .. -G "MinGW Makefiles"
-  - cmd: mingw32-make
-  - cmd: ctest -C "Debug"
+  # Workaround for CMake not wanting sh.exe on PATH for MinGW
+  - set PATH=%PATH:C:\Program Files (x86)\Git\bin;=%
+  - set PATH=C:\MinGW\bin;%PATH%
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "%GENERATOR%" ..
+  - ctest -V
+
+#build_script: cmake --build .. --config %CONFIGURATION%
 
