@@ -17,6 +17,6 @@ build_script:
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
-  - cmd: make
+  - cmd: mingw32-make
   - cmd: ctest -C "Debug"
 
