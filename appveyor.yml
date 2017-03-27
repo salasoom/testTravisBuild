@@ -11,7 +11,7 @@ install:
 
 build_script:
   - cmd: SET PATH=C:\mingw64\bin;%PATH%
-  - cmd: C:\msys64\usr\bin\sh.exe --login /c/projects
+#  - cmd: C:\msys64\usr\bin\sh.exe --login /c/projects
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
