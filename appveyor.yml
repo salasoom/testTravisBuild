@@ -13,6 +13,9 @@ install:
   # install 64 bit mingw
   - cmd: choco install -y mingw
 
+cache:
+  - C:\Users\appveyor\AppData\Local\Temp\chocolatey
+
 build_script:
   - refreshenv
   # remove sh.exe from PATH for MinGW
