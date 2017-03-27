@@ -22,11 +22,11 @@ cache:
   - C:\tools\mingw64 -> appveyor.yml
 
 build_script:
-  - refreshenv
+#  - refreshenv
   # remove sh.exe from PATH for MinGW
-  - set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+#  - set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   # remove 32 bit mingw from PATH
-  - set PATH=%PATH:C:\MinGW\bin;=%
+#  - set PATH=%PATH:C:\MinGW\bin;=%
   - mkdir build
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
