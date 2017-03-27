@@ -11,12 +11,12 @@ environment:
 
 install:
   # install 64 bit mingw
-  - ps: 'if (!(Test-Path c:\tools\mingw64) -and ($GENERATOR -Contains "MinGW")) {
-          echo "!!!!!!!"
-          choco install -y mingw
-          refreshenv
-          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
-        }'
+  - ps: if (!(Test-Path c:\tools\mingw64) -and ($GENERATOR -Contains "MinGW")) {`
+          echo "!!!!!!!"`
+          choco install -y mingw`
+          refreshenv`
+          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%`
+        }
 
 cache:
   - C:\tools\mingw64 -> appveyor.yml
