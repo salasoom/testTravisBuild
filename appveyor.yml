@@ -11,7 +11,7 @@ install:
 
 build_script:
   - cmd: refreshenv
-  - cmd: SET PATH=%PATH%:C:\Program Files (x86)\Git\usr\bin;=%
+  - cmd: SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
 #  - cmd: C:\msys64\usr\bin\sh.exe --login /c/projects
   - cmd: mkdir build
   - cmd: cd build
