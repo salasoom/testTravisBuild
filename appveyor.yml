@@ -6,7 +6,7 @@ environment:
     - GENERATOR: Visual Studio 14 2015
     - GENERATOR: Visual Studio 14 2015 Win64
 
-#configuration: Debug
+configuration: Debug
 
 build_script:
   # Workaround for CMake not wanting sh.exe on PATH for MinGW
