@@ -6,7 +6,6 @@ environment:
     - GENERATOR: Visual Studio 14 2015
     - GENERATOR: Visual Studio 14 2015 Win64
 
-configuration: Debug
 
 build_script:
   # Workaround for CMake not wanting sh.exe on PATH for MinGW
@@ -14,8 +13,8 @@ build_script:
   - set PATH=C:\MinGW\bin;%PATH%
   - mkdir build
   - cd build
-  - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "%GENERATOR%" ..
-  - ctest -V -C "%CONFIGURATION%"
+  - cmake -G "%GENERATOR%" ..
+  - ctest -V -C "Debug"
 
 #build_script: cmake --build .. --config %CONFIGURATION%
 
