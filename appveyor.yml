@@ -6,11 +6,15 @@ environment:
 #    - COMPILER: MSVC15
 #    - COMPILER: MinGW
 
+install:
+  - cmd: choco install -y mingw
+
 build_script:
+  - cmd: SET PATH=C:\mingw64\bin;%PATH%
+  - cmd: C:\msys64\usr\bin\sh.exe --login /c/projects
   - cmd: mkdir build
   - cmd: cd build
   - cmd: cmake ..
-  - cmd: msbuild hello.sln
+  - cmd: mingw32-make
   - cmd: ctest -C "Debug"
-  - cmd: cl
 
