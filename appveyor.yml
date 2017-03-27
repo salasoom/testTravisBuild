@@ -10,9 +10,8 @@ install:
   - cmd: choco install -y mingw
 
 build_script:
-#  - cmd: SET PATH=C:\mingw64\bin;%PATH%
+  - cmd: SET PATH=%PATH%:C:\Program Files (x86)\Git\usr\bin;=%
   - cmd: refreshenv
-  - cmd: ls C:\tools\mingw64\bin
 #  - cmd: C:\msys64\usr\bin\sh.exe --login /c/projects
   - cmd: mkdir build
   - cmd: cd build
