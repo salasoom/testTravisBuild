@@ -14,7 +14,7 @@ install:
   - cmd: choco install -y mingw
 
 cache:
-  - C:\Users\appveyor\AppData\Local\Temp\chocolatey
+  - C:\Users\appveyor\AppData\Local\Temp\chocolatey -> appveyor.yml
 
 build_script:
   - refreshenv
