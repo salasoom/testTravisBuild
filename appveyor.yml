@@ -15,7 +15,7 @@ build_script:
   - mkdir build
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "%GENERATOR%" ..
-  - ctest -V
+  - ctest -V -C "%CONFIGURATION%"
 
 #build_script: cmake --build .. --config %CONFIGURATION%
 
