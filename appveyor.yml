@@ -3,8 +3,8 @@ version: 1.0.{build}
 environment:
   matrix:
     - COMPILER: MSVC14
-    - COMPILER: MSVC15
-    - COMPILER: MinGW
+#    - COMPILER: MSVC15
+#    - COMPILER: MinGW
 
 build_script:
   - cmd: mkdir build
