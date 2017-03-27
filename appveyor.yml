@@ -11,10 +11,15 @@ environment:
 
 install:
   # install 64 bit mingw
-  - cmd: choco install -y mingw
+  - ps: if (!(Test-Path c:\tools\mingw64) && ([[ $GENERATOR = \MinGW*]])) {
+          echo "!!!!!!!"
+          choco install -y mingw
+          refreshenv
+          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
+        }
 
 cache:
-  - C:\Users\appveyor\AppData\Local\Temp\chocolatey -> appveyor.yml
+  - C:\tools\mingw64 -> appveyor.yml
 
 build_script:
   - refreshenv
