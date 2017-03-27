@@ -13,8 +13,7 @@ build_script:
   - set PATH=C:\MinGW\bin;%PATH%
   - mkdir build
   - cd build
-  - cmake -G "%GENERATOR%" --build ..
+  - cmake -G "%GENERATOR%" ..
+  - cmake --build ..
   - ctest -V -C "Debug"
-
-#build_script: cmake --build .. --config %CONFIGURATION%
 
