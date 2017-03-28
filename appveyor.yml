@@ -4,6 +4,8 @@ environment:
   matrix:
     - GENERATOR: MinGW Makefiles
       BUILD_TYPE: Debug
+    - GENERATOR: MinGW Makefiles
+      BUILD_TYPE: Release
     - GENERATOR: Visual Studio 14 2015
       BUILD_TYPE: Debug
     - GENERATOR: Visual Studio 14 2015 Win64
@@ -11,20 +13,16 @@ environment:
 
 install:
   # install 64 bit mingw
-  - ps: if (!($env:PATH -Match "mingw64") -and ($env:GENERATOR -Match "MinGW")) { cmd.exe /c 'install_mingw64.bat' }
-#          echo "!!!!!!!"
-#          choco install -y mingw
-#          refreshenv
-#          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
-#        }
+  - if [%GENERATOR%]==["MinGW Makefiles"] (
+      choco install -y mingw
+      refreshenv
+      SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+    )
 
 cache:
   - C:\tools\mingw64 -> appveyor.yml
 
 build_script:
-#  - refreshenv
-  # remove sh.exe from PATH for MinGW
-#  - set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   # remove 32 bit mingw from PATH
 #  - set PATH=%PATH:C:\MinGW\bin;=%
   - mkdir build
