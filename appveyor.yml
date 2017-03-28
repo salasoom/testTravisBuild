@@ -13,6 +13,9 @@ install:
   # install 64 bit mingw
   - ps: Write-Host "HERE!@!@!@!"
   - ps: Write-Host $env:GENERATOR
+  - ps: Write-Host ($env:GENERATOR -Contains "mingw64")
+  - ps: Write-Host Test-Path
+  - ps: Write-Host (!(Test-Path -Contains "mingw64"))
   - ps: if (!(Test-Path c:\tools\mingw64) -and ($env:GENERATOR -Contains "MinGW")) {
           Write-Host "!!!!!!!"
         }
