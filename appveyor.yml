@@ -11,7 +11,7 @@ environment:
 
 install:
   # install 64 bit mingw
-  - ps: if (!($env:PATH -Match "mingw64") -and ($env:GENERATOR -Match "MinGW")) { echo "!!!!!!" }
+  - ps: if (!($env:PATH -Match "mingw64") -and ($env:GENERATOR -Match "MinGW")) { cmd.exe /c 'install_mingw64.bat' }
 #          echo "!!!!!!!"
 #          choco install -y mingw
 #          refreshenv
