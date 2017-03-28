@@ -11,11 +11,12 @@ environment:
 
 install:
   # install 64 bit mingw
+  - ps: Write-Host "HERE!@!@!@!"
   - ps: if (!(Test-Path c:\tools\mingw64) -and ($GENERATOR -Contains "MinGW")) {
           Write-Host "!!!!!!!"
-          choco install -y mingw
-          refreshenv
-          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
+#          choco install -y mingw
+#          refreshenv
+#          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
         }
 
 cache:
