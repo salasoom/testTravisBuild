@@ -19,7 +19,7 @@ install:
 
 build_script:
   # remove 32 bit mingw from PATH
-#  - set PATH=%PATH:C:\MinGW\bin;=%
+  - set PATH=%PATH:C:\MinGW\bin;=%
   - mkdir build
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
