@@ -17,9 +17,6 @@ install:
   - if "%GENERATOR%"=="MinGW Makefiles" refreshenv
   - if "%GENERATOR%"=="MinGW Makefiles" SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
-cache:
-  - C:\tools\mingw64 -> appveyor.yml
-
 build_script:
   # remove 32 bit mingw from PATH
 #  - set PATH=%PATH:C:\MinGW\bin;=%
