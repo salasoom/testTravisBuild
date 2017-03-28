@@ -13,10 +13,10 @@ install:
   # install 64 bit mingw
   - ps: Write-Host "HERE!@!@!@!"
   - ps: Write-Host $env:GENERATOR
-  - ps: Write-Host ($env:GENERATOR -Contains "mingw64")
+  - ps: Write-Host ($env:GENERATOR -Contains "MinGW")
   - ps: Write-Host $env:PATH
   - ps: Write-Host (!($env:PATH -Contains "mingw64"))
-  - ps: if (!($env:PATH c:\tools\mingw64) -and ($env:GENERATOR -Contains "MinGW")) {
+  - ps: if (!($env:PATH -Contains "mingw64") -and ($env:GENERATOR -Contains "MinGW")) {
           Write-Host "!!!!!!!"
         }
 #          choco install -y mingw
