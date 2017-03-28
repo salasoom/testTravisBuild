@@ -12,8 +12,8 @@ environment:
 install:
   # install 64 bit mingw
   - cmd: echo "HERE!@!@!@!"
-  - cmd: echo %GENERATOR%
-  - cmd: echo (%GENERATOR% =~ .*"MinGW".*)
+  - cmd: echo $(( %GENERATOR% ))
+  - cmd: echo $(( %GENERATOR% =~ .*"MinGW".* ))
   - cmd: echo %PATH%
   - cmd: echo (!(%PATH% -Match "mingw64"))
   - cmd: if (!(%PATH% -Match "mingw64") -and (%GENERATOR% -Match "MinGW")) {
