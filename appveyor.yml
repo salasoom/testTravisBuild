@@ -18,11 +18,10 @@ install:
   - ps: Write-Host (!($env:PATH -Match "mingw64"))
   - ps: if (!($env:PATH -Match "mingw64") -and ($env:GENERATOR -Match "MinGW")) {
           Write-Host "!!!!!!!"
+          choco install -y mingw
+          refreshenv
+          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
         }
-#          choco install -y mingw
-#          refreshenv
-#          SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
-#        }
 
 cache:
   - C:\tools\mingw64 -> appveyor.yml
