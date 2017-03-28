@@ -13,7 +13,7 @@ environment:
 
 install:
   # install 64 bit mingw
-  - if [%GENERATOR%]==[MinGW Makefiles] choco install -y mingw
+  - if [%GENERATOR%] == "MinGW Makefiles" choco install -y mingw
   - if [%GENERATOR%]==[MinGW Makefiles] refreshenv
   - if [%GENERATOR%]==[MinGW Makefiles] SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
