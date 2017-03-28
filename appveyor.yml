@@ -12,7 +12,7 @@ environment:
       BUILD_TYPE: Debug
 
 install:
-  - cmd: choco install -y mingw
+  - choco install -y mingw
 #  - cmd: if "%GENERATOR%"=="MinGW Makefiles" choco install -y mingw
 
 build_script:
