@@ -13,11 +13,9 @@ environment:
 
 install:
   # install 64 bit mingw
-  - if [%GENERATOR%]==[MinGW Makefiles] (
-      choco install -y mingw
-      refreshenv
-      SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-    )
+  - if [%GENERATOR%]==[MinGW Makefiles] choco install -y mingw
+  - if [%GENERATOR%]==[MinGW Makefiles] refreshenv
+  - if [%GENERATOR%]==[MinGW Makefiles] SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
 cache:
   - C:\tools\mingw64 -> appveyor.yml
