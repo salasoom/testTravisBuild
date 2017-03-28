@@ -1,5 +1,7 @@
 version: 1.1.0-{build}
 
+platform: x64
+
 environment:
   matrix:
     - GENERATOR: MinGW Makefiles
@@ -11,12 +13,12 @@ environment:
     - GENERATOR: Visual Studio 14 2015 Win64
       BUILD_TYPE: Debug
 
-install:
-  - if "%GENERATOR%"=="MinGW Makefiles" choco install -y mingw
+#install:
+#  - if "%GENERATOR%"=="MinGW Makefiles" choco install -y mingw
 
 build_script:
-  - refreshenv
-  - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+#  - refreshenv
+#  - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - mkdir build
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
