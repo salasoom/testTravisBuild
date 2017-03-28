@@ -12,13 +12,11 @@ environment:
       BUILD_TYPE: Debug
 
 install:
-#  - choco install -y mingw
-  - cmd: if "%GENERATOR%"=="MinGW Makefiles" choco install -y mingw
+  - if "%GENERATOR%"=="MinGW Makefiles" choco install -y mingw
 
 build_script:
   - refreshenv
   - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-#  - set PATH=%PATH:C:\MinGW\bin;=%
   - mkdir build
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
