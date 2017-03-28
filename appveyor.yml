@@ -18,7 +18,10 @@ environment:
 
 build_script:
 #  - refreshenv
+  # add 64 bit mingw to PATH
   - SET PATH=%PATH%;C:\mingw-w64\i686-5.3.0-posix-dwarf-rt_v4-rev0
+  # remove 32 bit mingw from PATH
+  - SET PATH=%PATH:C:\MinGW\bin;=%
   - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - mkdir build
   - cd build
