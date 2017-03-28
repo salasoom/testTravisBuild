@@ -11,13 +11,10 @@ environment:
     - GENERATOR: Visual Studio 14 2015 Win64
       BUILD_TYPE: Debug
 
-install:
-  # install 64 bit mingw
+build_script:
   - if "%GENERATOR%"=="MinGW Makefiles" choco install -y mingw
   - if "%GENERATOR%"=="MinGW Makefiles" refreshenv
   - if "%GENERATOR%"=="MinGW Makefiles" SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-
-build_script:
   # remove 32 bit mingw from PATH
   - set PATH=%PATH:C:\MinGW\bin;=%
   - mkdir build
