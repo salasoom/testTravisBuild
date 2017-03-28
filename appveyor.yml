@@ -17,11 +17,8 @@ install:
 
 build_script:
   - refreshenv
-#  - cmd: if "%GENERATOR%"=="MinGW Makefiles" refreshenv
   - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-  - cmd: if "%GENERATOR%"=="MinGW Makefiles" SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-  # remove 32 bit mingw from PATH
-  - set PATH=%PATH:C:\MinGW\bin;=%
+#  - set PATH=%PATH:C:\MinGW\bin;=%
   - mkdir build
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
