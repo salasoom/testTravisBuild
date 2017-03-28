@@ -11,13 +11,13 @@ environment:
 
 install:
   # install 64 bit mingw
-  - ps: Write-Host "HERE!@!@!@!"
-  - ps: Write-Host $env:GENERATOR
-  - ps: Write-Host ($env:GENERATOR -Match "MinGW")
-  - ps: Write-Host $env:PATH
-  - ps: Write-Host (!($env:PATH -Match "mingw64"))
-  - ps: if (!($env:PATH -Match "mingw64") -and ($env:GENERATOR -Match "MinGW")) {
-          Write-Host "!!!!!!!"
+  - cmd: echo "HERE!@!@!@!"
+  - cmd: echo %GENERATOR%
+  - cmd: echo (%GENERATOR% =~ .*"MinGW".*)
+  - cmd: echo %PATH%
+  - cmd: echo (!(%PATH% -Match "mingw64"))
+  - cmd: if (!(%PATH% -Match "mingw64") -and (%GENERATOR% -Match "MinGW")) {
+          echo "!!!!!!!"
           choco install -y mingw
           refreshenv
           SET PATH=%PATH%:C:\Program Files\Git\usr\bin;=%
