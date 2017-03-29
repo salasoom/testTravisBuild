@@ -24,6 +24,7 @@ build_script:
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
   - cmake --build .
   - ctest -V -C "%BUILD_TYPE%"
-  - get-command make
+  - where make
   - if "%GENERATOR%"=="MinGW Makefiles" echo %PATH%
+  - where mingw32-make
 
