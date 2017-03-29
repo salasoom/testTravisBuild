@@ -27,8 +27,10 @@ build_script:
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
 
-  - if "%COMPILER%"=="mingw" mingw32-make
-  - if "%COMPILER%"=="mingw" mingw32-make test
+  - if "%COMPILER%"=="mingw" C:\msys64\usr\bin\sh.exe --login mingw32-make
+#  - if "%COMPILER%"=="mingw"
+#  - if "%COMPILER%"=="mingw" mingw32-make
+#  - if "%COMPILER%"=="mingw" mingw32-make test
 
   - if "%COMPILER%"=="msvc" cmake --build .
   - if "%COMPILER%"=="msvc" ctest -V -C "%BUILD_TYPE%"
