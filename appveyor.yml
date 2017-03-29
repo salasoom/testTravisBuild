@@ -33,3 +33,5 @@ build_script:
   - if "%COMPILER%"=="msvc" cmake --build .
   - if "%COMPILER%"=="msvc" ctest -V -C "%BUILD_TYPE%"
 
+  - echo %PATH%
+
