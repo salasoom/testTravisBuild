@@ -21,12 +21,13 @@ install:
   - if "%COMPILER%"=="mingw" choco install -y mingw
 
 build_script:
-  - refreshenv
-  - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-  - mkdir build
-  - cd build
+  - if "%COMPILER%"=="mingw" refreshenv
+  - if "%COMPILER%"=="mingw" SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - if "%COMPILER%"=="mingw" mingw32-make
   - if "%COMPILER%"=="mingw" mingw32-make test
+
+  - if "%COMPILER%"=="msvc" mkdir build
+  - if "%COMPILER%"=="msvc" cd build
   - if "%COMPILER%"=="msvc" cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
   - if "%COMPILER%"=="msvc" cmake --build .
   - if "%COMPILER%"=="msvc" ctest -V -C "%BUILD_TYPE%"
