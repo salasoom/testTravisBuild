@@ -18,7 +18,7 @@ environment:
       BUILD_TYPE: Debug
 
 install:
-  - if "%COMPILER%"=="MinGW Makefiles" choco install -y mingw
+  - if "%COMPILER%"=="mingw" choco install -y mingw
 
 build_script:
   - refreshenv
