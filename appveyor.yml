@@ -4,27 +4,30 @@ platform: x64
 
 environment:
   matrix:
-    - GENERATOR: MinGW Makefiles
+    - COMPILER: mingw
+      GENERATOR: MinGW Makefiles
       BUILD_TYPE: Debug
-    - GENERATOR: MinGW Makefiles
+    - COMPILER: mingw
+      GENERATOR: MinGW Makefiles
       BUILD_TYPE: Release
-    - GENERATOR: Visual Studio 14 2015
+    - COMPILER: msvc
+      GENERATOR: Visual Studio 14 2015
       BUILD_TYPE: Debug
-    - GENERATOR: Visual Studio 14 2015 Win64
+    - COMPILER: msvc
+      GENERATOR: Visual Studio 14 2015 Win64
       BUILD_TYPE: Debug
 
 install:
-  - if "%GENERATOR%"=="MinGW Makefiles" choco install -y mingw
+  - if "%COMPILER%"=="MinGW Makefiles" choco install -y mingw
 
 build_script:
   - refreshenv
   - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - mkdir build
   - cd build
-  - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
-  - cmake --build .
-  - ctest -V -C "%BUILD_TYPE%"
-  - where make
-  - if "%GENERATOR%"=="MinGW Makefiles" echo %PATH%
-  - where mingw32-make
+  - if "%COMPILER%"=="mingw" mingw32-make
+  - if "%COMPILER%"=="mingw" mingw32-make test
+  - if "%COMPILER%"=="msvc" cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
+  - if "%COMPILER%"=="msvc" cmake --build .
+  - if "%COMPILER%"=="msvc" ctest -V -C "%BUILD_TYPE%"
 
