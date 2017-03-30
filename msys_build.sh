@@ -1,8 +1,6 @@
 #!/bin/sh
 set -x
-echo "Started msys_build.sh!\n"
-pwd
-ls
+cd /c/projects/testtravisbuild/build
 make
 make test
 
