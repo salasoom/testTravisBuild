@@ -27,11 +27,7 @@ build_script:
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
 
-  - dir C:\msys64
-  - dir C:\mingw-w64\i686-5.3.0-posix-dwarf-rt_v4-rev0
-
-  - if "%COMPILER%"=="mingw" dir C:\msys64\usr\bin\
-  - if "%COMPILER%"=="mingw" C:\msys64\mingw64.exe make
+  - if "%COMPILER%"=="mingw" C:\msys64\usr\bin\sh.exe --login msys_build.sh
 #  - if "%COMPILER%"=="mingw"
 #  - if "%COMPILER%"=="mingw" mingw32-make
 #  - if "%COMPILER%"=="mingw" mingw32-make test
