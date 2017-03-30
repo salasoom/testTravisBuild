@@ -27,7 +27,7 @@ build_script:
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
 
-  - if "%COMPILER%"=="mingw" C:\msys64\usr\bin\sh.exe --login msys_build.sh
+  - if "%COMPILER%"=="mingw" C:\msys64\usr\bin\sh.exe --login /c/projects/testtravisbuild/msys_build.sh
 #  - if "%COMPILER%"=="mingw"
 #  - if "%COMPILER%"=="mingw" mingw32-make
 #  - if "%COMPILER%"=="mingw" mingw32-make test
