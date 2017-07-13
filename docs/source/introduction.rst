@@ -4,7 +4,7 @@
 Introduction
 ============
 
-This tag is 1.0
+This tag is 1.1
 
 |testTravisCI| is an open source C/C++ library for compressed numerical arrays that
 support high throughput read and write random access.  |testTravisCI| also supports
