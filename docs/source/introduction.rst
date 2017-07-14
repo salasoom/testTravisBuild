@@ -4,7 +4,7 @@
 Introduction
 ============
 
-THIS TEXT IS FROM A NON MASTER BRANCH.
+THIS TEXT IS FROM A NON MASTER BRANCH (ANOTHER BRANCH).
 
 |testTravisCI| is an open source C/C++ library for compressed numerical arrays that
 support high throughput read and write random access.  |testTravisCI| also supports
