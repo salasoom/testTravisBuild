@@ -21,6 +21,7 @@ environment:
       BUILD_TYPE: Debug
 
 build_script:
+  - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - mkdir build
   - cd build
   - cmake -G "%GENERATOR%" ..
