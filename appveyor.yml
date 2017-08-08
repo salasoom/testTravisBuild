@@ -27,7 +27,7 @@ install:
 build_script:
   - mkdir build
   - cd build
-  - cmake -G "%GENERATOR%" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
+  - cmake -G "%GENERATOR%" -DCMAKE_SH=CMAKE_SH-NOTFOUND ..
   - cmake --build .
   - ctest -V -C "%BUILD_TYPE%"
 
