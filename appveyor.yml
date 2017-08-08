@@ -19,7 +19,7 @@ environment:
 
 install:
   # otherwise MinGW will complain if git's sh.exe in path
-#  - if "%COMPILER%"=="mingw" set PATH=C:\MinGW\bin;%PATH%
+  - if "%COMPILER%"=="mingw" set PATH=C:\MinGW\bin;%PATH%
 #  - if "%COMPILER%"=="mingw" mingw-get update
 #  - if "%COMPILER%"=="mingw" mingw-get install mingw32-gmp
 #  - if "%COMPILER%"=="mingw" rename "C:\Program Files\Git\usr\bin\sh.exe" "sh2.exe"
