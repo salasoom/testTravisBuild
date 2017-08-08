@@ -20,7 +20,11 @@ environment:
       GENERATOR: Visual Studio 15 2017
       BUILD_TYPE: Debug
 
+install:
+  - if "%COMPILER%"=="mingw" choco install -y mingw
+
 build_script:
+  - refreshenv
   - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - mkdir build
   - cd build
