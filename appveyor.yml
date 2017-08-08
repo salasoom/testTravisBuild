@@ -2,9 +2,9 @@ version: 0.5.1-{build}
 
 environment:
   matrix:
-    - COMPILER: mingw
-      GENERATOR: MinGW Makefiles
-      PLATFORM: Win32
+#    - COMPILER: mingw
+#      GENERATOR: MinGW Makefiles
+#      PLATFORM: Win32
 
     - COMPILER: mingw-w64
       GENERATOR: MinGW Makefiles
@@ -13,10 +13,12 @@ environment:
     - COMPILER: msvc
       GENERATOR: Visual Studio 15 2017 Win64
       PLATFORM: x64
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
     - COMPILER: msvc
       GENERATOR: Visual Studio 15 2017
       PLATFORM: Win32
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
     - COMPILER: msvc
       GENERATOR: Visual Studio 14 2015 Win64
@@ -27,9 +29,8 @@ environment:
       PLATFORM: Win32
 
 install:
-  - cmake --help
   - if "%COMPILER%"=="mingw" set PATH=C:\MinGW\bin;%PATH%
-  - if "%COMPILER%"=="mingw-w64" set PATH=C:\mingw-w64\bin;%PATH%
+  - if "%COMPILER%"=="mingw-w64" set PATH=C:\MinGW\bin;%PATH%
 
 build_script:
   - mkdir build
