@@ -16,7 +16,7 @@ ExternalProject_Get_Property(cmocka_cloned source_dir binary_dir)
 add_library(cmocka STATIC IMPORTED GLOBAL)
 
 # choose proper library path & extension
-if(WIN32)
+if(MSVC)
   set(IMPORTED_LOCATION_PATH "${binary_dir}/src/Debug/cmocka.lib")
 else()
   set(IMPORTED_LOCATION_PATH "${binary_dir}/src/libcmocka.a")

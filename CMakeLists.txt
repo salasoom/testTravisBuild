@@ -47,7 +47,7 @@ endif()
 #------------------------------------------------------------------------------#
 
 # Windows specific options
-if(WIN32)
+if(MSVC)
   # Use this to get a usable export library when building a DLL on Windows
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
