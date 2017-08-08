@@ -1,37 +1,13 @@
-version: 1.1.0-{build}
-
-platform: x64
+version: 0.5.1-{build}
 
 environment:
   matrix:
-    - COMPILER: mingw
-      GENERATOR: MinGW Makefiles
-      BUILD_TYPE: Debug
-    - COMPILER: mingw
-      GENERATOR: MinGW Makefiles
-      BUILD_TYPE: Release
-    - COMPILER: msvc
-      GENERATOR: Visual Studio 14 2015
-      BUILD_TYPE: Debug
-    - COMPILER: msvc
-      GENERATOR: Visual Studio 14 2015 Win64
-      BUILD_TYPE: Debug
-
-install:
-  - if "%COMPILER%"=="mingw" choco install -y mingw
+    - GENERATOR: Visual Studio 14 2015 Win64
 
 build_script:
-  - refreshenv
-  - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - mkdir build
   - cd build
-  - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "%GENERATOR%" ..
-
-  - if "%COMPILER%"=="mingw" C:\msys64\usr\bin\sh.exe --login -c /c/projects/testtravisbuild/msys_build.sh
-#  - if "%COMPILER%"=="mingw"
-#  - if "%COMPILER%"=="mingw" mingw32-make
-#  - if "%COMPILER%"=="mingw" mingw32-make test
-
-  - if "%COMPILER%"=="msvc" cmake --build .
-  - if "%COMPILER%"=="msvc" ctest -V -C "%BUILD_TYPE%"
+  - cmake -G "%GENERATOR%" ..
+  - cmake --build .
+  - ctest -V -C "Debug"
 
