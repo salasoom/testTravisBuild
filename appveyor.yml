@@ -16,22 +16,17 @@ environment:
     - COMPILER: msvc
       GENERATOR: Visual Studio 14 2015
       BUILD_TYPE: Debug
-    - COMPILER: msvc
-      GENERATOR: Visual Studio 15 2017
-      BUILD_TYPE: Debug
 
 install:
-  - if "%COMPILER%"=="mingw" choco install -y mingw
+  - if "%COMPILER%"=="mingw" set PATH=C:\MinGW\bin;%PATH%
+  - if "%COMPILER%"=="mingw" mingw-get update
+  - if "%COMPILER%"=="mingw" mingw-get install mingw32-gmp
+  - if "%COMPILER%"=="mingw" rename "C:\Program Files\Git\usr\bin\sh.exe" "sh2.exe"
 
 build_script:
-  - refreshenv
-  - SET PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - mkdir build
   - cd build
   - cmake -G "%GENERATOR%" ..
-
-  - if "%COMPILER%"=="mingw" C:\msys64\usr\bin\sh.exe --login -c /c/projects/testtravisbuild/msys_build.sh
-
-  - if "%COMPILER%"=="msvc" cmake --build .
-  - if "%COMPILER%"=="msvc" ctest -V -C "%BUILD_TYPE%"
+  - cmake --build .
+  - ctest -V -C "%BUILD_TYPE%"
 
