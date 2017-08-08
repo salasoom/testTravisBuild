@@ -10,12 +10,12 @@ environment:
     - COMPILER: mingw
       GENERATOR: MinGW Makefiles
       BUILD_TYPE: Release
-    - COMPILER: msvc
-      GENERATOR: Visual Studio 14 2015 Win64
-      BUILD_TYPE: Debug
-    - COMPILER: msvc
-      GENERATOR: Visual Studio 14 2015
-      BUILD_TYPE: Debug
+#    - COMPILER: msvc
+#      GENERATOR: Visual Studio 14 2015 Win64
+#      BUILD_TYPE: Debug
+#    - COMPILER: msvc
+#      GENERATOR: Visual Studio 14 2015
+#      BUILD_TYPE: Debug
 
 install:
   - if "%COMPILER%"=="mingw" set PATH=C:\MinGW\bin;%PATH%
@@ -26,7 +26,8 @@ install:
 build_script:
   - mkdir build
   - cd build
-  - cmake -G "%GENERATOR%" ..
+  - if "%COMPILER%"=="mingw" cmake -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH=C:\MinGW
+#  - cmake -G "%GENERATOR%" ..
   - cmake --build .
   - ctest -V -C "%BUILD_TYPE%"
 
