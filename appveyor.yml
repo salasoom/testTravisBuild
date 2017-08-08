@@ -1,8 +1,24 @@
 version: 0.5.1-{build}
 
+platform: x64
+
 environment:
   matrix:
-    - GENERATOR: Visual Studio 14 2015 Win64
+    - COMPILER: mingw
+      GENERATOR: MinGW Makefiles
+      BUILD_TYPE: Debug
+    - COMPILER: mingw
+      GENERATOR: MinGW Makefiles
+      BUILD_TYPE: Release
+    - COMPILER: msvc
+      GENERATOR: Visual Studio 14 2015 Win64
+      BUILD_TYPE: Debug
+    - COMPILER: msvc
+      GENERATOR: Visual Studio 14 2015
+      BUILD_TYPE: Debug
+    - COMPILER: msvc
+      GENERATOR: Visual Studio 15 2017
+      BUILD_TYPE: Debug
 
 build_script:
   - mkdir build
