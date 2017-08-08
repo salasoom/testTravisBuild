@@ -1,29 +1,39 @@
 version: 0.5.1-{build}
 
-platform: x64
-
 environment:
   matrix:
     - COMPILER: mingw
       GENERATOR: MinGW Makefiles
-      BUILD_TYPE: Debug
-    - COMPILER: mingw
+      PLATFORM: Win32
+
+    - COMPILER: mingw-w64
       GENERATOR: MinGW Makefiles
-      BUILD_TYPE: Release
+      PLATFORM: x64
+
+    - COMPILER: msvc
+      GENERATOR: Visual Studio 15 2017 Win64
+      PLATFORM: x64
+
+    - COMPILER: msvc
+      GENERATOR: Visual Studio 15 2017
+      PLATFORM: Win32
+
     - COMPILER: msvc
       GENERATOR: Visual Studio 14 2015 Win64
-      BUILD_TYPE: Debug
+      PLATFORM: x64
+
     - COMPILER: msvc
       GENERATOR: Visual Studio 14 2015
-      BUILD_TYPE: Debug
+      PLATFORM: Win32
 
 install:
   - if "%COMPILER%"=="mingw" set PATH=C:\MinGW\bin;%PATH%
+  - if "%COMPILER%"=="mingw-w64" set PATH=C:\mingw-w64\bin;%PATH%
 
 build_script:
   - mkdir build
   - cd build
   - cmake -G "%GENERATOR%" -DCMAKE_SH=CMAKE_SH-NOTFOUND ..
   - cmake --build .
-  - ctest -V -C "%BUILD_TYPE%"
+  - ctest -V
 
