@@ -37,5 +37,5 @@ build_script:
   - cd build
   - cmake -G "%GENERATOR%" -DCMAKE_SH=CMAKE_SH-NOTFOUND ..
   - cmake --build .
-  - ctest -V
+  - ctest -V -C "Release"
 
