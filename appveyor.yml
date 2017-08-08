@@ -26,7 +26,7 @@ install:
 build_script:
   - mkdir build
   - cd build
-  - if "%COMPILER%"=="mingw" cmake -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH=C:\MinGW
+  - if "%COMPILER%"=="mingw" cmake -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH=C:\MinGW ..
 #  - cmake -G "%GENERATOR%" ..
   - cmake --build .
   - ctest -V -C "%BUILD_TYPE%"
