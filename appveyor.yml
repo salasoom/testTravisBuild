@@ -19,7 +19,6 @@ environment:
 
 install:
   # otherwise MinGW will complain if git's sh.exe in path
-  - set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 #  - if "%COMPILER%"=="mingw" set PATH=C:\MinGW\bin;%PATH%
 #  - if "%COMPILER%"=="mingw" mingw-get update
 #  - if "%COMPILER%"=="mingw" mingw-get install mingw32-gmp
@@ -28,7 +27,7 @@ install:
 build_script:
   - mkdir build
   - cd build
-  - cmake -G "%GENERATOR%" ..
+  - cmake -G "%GENERATOR%" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
   - cmake --build .
   - ctest -V -C "%BUILD_TYPE%"
 
