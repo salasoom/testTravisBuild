@@ -5,6 +5,7 @@ dist: trusty
 
 env:
   - C_STANDARD=99
+  - CXX_STANDARD=98
 
 matrix:
   include:
@@ -23,6 +24,22 @@ matrix:
           packages: gcc-6
       env:
         - C_STANDARD=11
+
+    - compiler: gcc-6
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-6
+      env:
+        - CXX_STANDARD=11
+
+    - compiler: gcc-6
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-6
+      env:
+        - CXX_STANDARD=14
 
     - compiler: gcc-6
       addons:
