@@ -3,8 +3,9 @@ language:
 
 dist: trusty
 
-env:
-  - C_STANDARD=99 CXX_STANDARD=98
+global:
+  env:
+    - C_STANDARD=99 CXX_STANDARD=98
 
 matrix:
   include:
