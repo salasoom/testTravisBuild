@@ -3,8 +3,28 @@ language:
 
 dist: trusty
 
+env:
+  - C_STANDARD=99
+
 matrix:
   include:
+    - compiler: gcc-6
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-6
+      env:
+        - C_STANDARD=90
+
+
+    - compiler: gcc-6
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-6
+      env:
+        - C_STANDARD=11
+
     - compiler: gcc-6
       addons:
         apt:
