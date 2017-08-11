@@ -1,7 +1,7 @@
 language:
   - c
 
-os: osx
+dist: trusty
 
 env:
   - C_STANDARD=99 CXX_STANDARD=98
@@ -46,11 +46,11 @@ matrix:
           sources: ubuntu-toolchain-r-test
           packages: gcc-6
 
-#    - compiler: clang-3.6
-#      addons:
-#        apt:
-#          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty']
-#          packages: clang-3.6
+    - compiler: clang-3.6
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty']
+          packages: clang-3.6
 
     - compiler: clang
       addons:
@@ -58,35 +58,35 @@ matrix:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty']
           packages: clang-3.4
 
-#    - compiler: gcc-4.4
-#      addons:
-#        apt:
-#          sources: ubuntu-toolchain-r-test
-#          packages: gcc-4.4
-#
-#    - compiler: gcc-4.7
-#      addons:
-#        apt:
-#          sources: ubuntu-toolchain-r-test
-#          packages: gcc-4.7
-#
-#    - compiler: gcc-4.8
-#      addons:
-#        apt:
-#          sources: ubuntu-toolchain-r-test
-#          packages: gcc-4.8
-#
-#    - compiler: gcc-4.9
-#      addons:
-#        apt:
-#          sources: ubuntu-toolchain-r-test
-#          packages: gcc-4.9
-#
-#    - compiler: gcc-5
-#      addons:
-#        apt:
-#          sources: ubuntu-toolchain-r-test
-#          packages: gcc-5
+    - compiler: gcc-4.4
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-4.4
+
+    - compiler: gcc-4.7
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-4.7
+
+    - compiler: gcc-4.8
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-4.8
+
+    - compiler: gcc-4.9
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-4.9
+
+    - compiler: gcc-5
+      addons:
+        apt:
+          sources: ubuntu-toolchain-r-test
+          packages: gcc-5
 
 script:
   - ./travis.sh
