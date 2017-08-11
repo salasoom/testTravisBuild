@@ -57,7 +57,7 @@ endif()
 
 # Suggest C99
 # Falls back to C89 if 99 is not supported
-if(not CMAKE_C_STANDARD)
+if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
   message(status "CMAKE_C_STANDARD was not set. Now set to 99\n")
 else()
