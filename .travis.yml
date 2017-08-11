@@ -8,43 +8,43 @@ env:
 
 matrix:
   include:
-    - compiler: gcc-6
-      addons:
-        apt:
-          sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+    - compiler: gcc
+#      addons:
+#        apt:
+#          sources: ubuntu-toolchain-r-test
+#          packages: gcc-6
       env:
         - C_STANDARD=90
 
-    - compiler: gcc-6
-      addons:
-        apt:
-          sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+    - compiler: gcc
+#      addons:
+#        apt:
+#          sources: ubuntu-toolchain-r-test
+#          packages: gcc-6
       env:
         - C_STANDARD=11
 
-    - compiler: gcc-6
-      addons:
-        apt:
-          sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+    - compiler: gcc
+#      addons:
+#        apt:
+#          sources: ubuntu-toolchain-r-test
+#          packages: gcc-6
       env:
         - CXX_STANDARD=11
 
-    - compiler: gcc-6
-      addons:
-        apt:
-          sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+    - compiler: gcc
+#      addons:
+#        apt:
+#          sources: ubuntu-toolchain-r-test
+#          packages: gcc-6
       env:
         - CXX_STANDARD=14
 
-    - compiler: gcc-6
-      addons:
-        apt:
-          sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+    - compiler: gcc
+#      addons:
+#        apt:
+#          sources: ubuntu-toolchain-r-test
+#          packages: gcc-6
 
 #    - compiler: clang-3.6
 #      addons:
