@@ -4,8 +4,7 @@ language:
 dist: trusty
 
 env:
-  - C_STANDARD=99
-  - CXX_STANDARD=98
+  - C_STANDARD=99 CXX_STANDARD=98
 
 matrix:
   include:
