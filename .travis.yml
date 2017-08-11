@@ -16,7 +16,6 @@ matrix:
       env:
         - C_STANDARD=90
 
-
     - compiler: gcc-6
       addons:
         apt:

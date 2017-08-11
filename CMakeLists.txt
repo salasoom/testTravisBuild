@@ -59,10 +59,8 @@ endif()
 # Falls back to C89 if 99 is not supported
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
-  message(status "CMAKE_C_STANDARD was not set. Now set to 99\n")
-else()
-  message(status "CMAKE_C_STANDARD passed in as ${CMAKE_C_STANDARD}\n")
 endif()
+message(STATUS "Compiling with C standard: ${CMAKE_C_STANDARD}\n")
 
 include(CMakeDependentOption)
 
