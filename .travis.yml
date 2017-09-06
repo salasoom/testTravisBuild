@@ -71,7 +71,7 @@ matrix:
         - pwd
         - ls
         - echo $TRAVIS_BUILD_DIR
-        - coveralls -i src/inline -e tests --gcov-options '\-lp' --root $TRAVIS_BUILD_DIR --build-root $TRAVIS_BUILD_DIR/build
+        - coveralls -i src/inline --gcov-options '\-lp' --root $TRAVIS_BUILD_DIR --build-root $TRAVIS_BUILD_DIR/build
 
     - os: linux
       dist: trusty
