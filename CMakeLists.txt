@@ -127,6 +127,7 @@ include(CTest)
 if(BUILD_TESTING)
   enable_testing()
   add_subdirectory(tests)
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 --coverage")
 endif()
 
 #------------------------------------------------------------------------------#
