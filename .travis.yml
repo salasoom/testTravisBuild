@@ -67,7 +67,7 @@ matrix:
       before_install:
         - pip install --user pyyaml cpp-coveralls
       after_success:
-        - coveralls -i src -e tests --gcov-options '\-lp'
+        - coveralls -i src -e tests --gcov-options '\-lp' --root $TRAVIS_BUILD_DIR --build-root $TRAVIS_BUILD_DIR/build
 
     - os: linux
       dist: trusty
