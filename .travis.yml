@@ -67,7 +67,7 @@ matrix:
       before_install:
         - pip install --user pyyaml cpp-coveralls
       after_success:
-        - coveralls -i src --gcov-options '\-lp'
+        - coveralls -i src -e tests --gcov-options '\-lp'
 
     - os: linux
       dist: trusty
